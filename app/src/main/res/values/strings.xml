@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Dice Trifecta</string>
+    <string name="action_settings">Settings</string>
+    <string name="directionsTitle">"<big>Welcome to Dice Trifecta!</big>\n</string>
+    <string name="directionsBody">"In this game, you roll three dice and are given a score based on your roll.\n
+If all three dice are the same value (a Trifecta!), your score will increase by that value times 100.\n
+\t\t(i.e. You roll triple 3\'s, you get 300 points).\n
+If two dice are the same value, your score will increase by 50 points.\n
+If none of the dice match, you receive no points.\n
+You can clear your current score or your saved Hi-Score by opening the menu and pressing \'New Game\' or \'Clear Hi-Score\', respectively.\n
+Click Play when you are ready! Good luck!"</string>
+    <string name="invite_to_play">Let\'s play!</string>
+    <string name="score">Score: </string>
+    <string name="hi_score">Hi-Score: </string>
+    <string name="new_game">New Game</string>
+    <string name="clear_hi_score">Clear Hi-Score</string>
+    <string name="exit">Exit</string>
+    <string name="initialScore">Score: 0</string>
+</resources>
