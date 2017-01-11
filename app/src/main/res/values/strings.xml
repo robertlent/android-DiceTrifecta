@@ -10,10 +10,14 @@ If none of the dice match, you receive no points.\n
 You can clear your current score or your saved Hi-Score by opening the menu and pressing \'New Game\' or \'Clear Hi-Score\', respectively.\n
 Click Play when you are ready! Good luck!"</string>
     <string name="invite_to_play">Let\'s play!</string>
-    <string name="score">Score: </string>
-    <string name="hi_score">Hi-Score: </string>
+    <string name="score">Score: %1$d</string>
+    <string name="hi_score">Hi-Score: %1$d</string>
     <string name="new_game">New Game</string>
     <string name="clear_hi_score">Clear Hi-Score</string>
     <string name="exit">Exit</string>
-    <string name="initialScore">Score: 0</string>
+    <string name="initial_score">Score: 0</string>
+    <string name="msg_reset_hi_score">Your Hi-Score has been reset to 0.</string>
+    <string name="initial_hi_score">Hi-Score: 0</string>
+    <string name="dice">Image of a Die</string>
+    <string name="play">Play</string>
 </resources>

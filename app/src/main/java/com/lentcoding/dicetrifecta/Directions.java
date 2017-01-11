@@ -25,7 +25,7 @@ public class Directions extends AppCompatActivity {
         });
     }
 
-    public void startGame(View v) {
+    private void startGame(View v) {
         Intent intent = new Intent(this, MainActivity.class);
 
         this.startActivity(intent);
