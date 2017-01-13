@@ -27,8 +27,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/viewResult"
-        android:layout_marginTop="25dp"
+        android:layout_alignTop="@+id/die2Image"
         android:contentDescription="@string/dice"
         android:src="@drawable/die_6" />
 

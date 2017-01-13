@@ -20,12 +20,12 @@ public class Directions extends AppCompatActivity {
         btnPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startGame(view);
+                startGame();
             }
         });
     }
 
-    private void startGame(View v) {
+    private void startGame() {
         Intent intent = new Intent(this, MainActivity.class);
 
         this.startActivity(intent);

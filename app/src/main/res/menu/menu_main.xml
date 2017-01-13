@@ -4,11 +4,11 @@
     tools:context="com.lentcoding.dicetrifecta.MainActivity">
 
     <item
-        android:id="@+id/action_settings"
-        android:enabled="false"
+        android:id="@+id/action_change_dice"
+        android:enabled="true"
         android:orderInCategory="100"
-        android:title="@string/action_settings"
-        android:visible="false"
+        android:title="@string/action_change_dice"
+        android:visible="true"
         app:showAsAction="never" />
 
     <item

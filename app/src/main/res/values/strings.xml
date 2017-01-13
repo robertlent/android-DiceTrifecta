@@ -1,14 +1,20 @@
 <resources>
     <string name="app_name">Dice Trifecta</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_change_dice">Change Dice Style</string>
     <string name="directionsTitle">"<big>Welcome to Dice Trifecta!</big>\n</string>
     <string name="directionsBody">"In this game, you roll three dice and are given a score based on your roll.\n
-If all three dice are the same value (a Trifecta!), your score will increase by that value times 100.\n
+<big><u>Scoring</u></big>\n
+<b>All three dice are the same value (a Trifecta!)</b>: Your score will increase by that value times 100.\n
 \t\t(i.e. You roll triple 3\'s, you get 300 points).\n
-If two dice are the same value, your score will increase by 50 points.\n
-If none of the dice match, you receive no points.\n
-You can clear your current score or your saved Hi-Score by opening the menu and pressing \'New Game\' or \'Clear Hi-Score\', respectively.\n
-Click Play when you are ready! Good luck!"</string>
+<b>Two dice are the same value</b>: Your score will increase by 50 points.\n
+<b>None of the dice have the same value</b>: You receive no points.\n\n
+<big><u>Menu Options</u></big>\n
+<b>Change Dice Style:</b> Switches between the default white dice with black pips and white dice with red pips. This choice will be remembered.\n
+<b>New Game:</b> Sets your current Score to 0.\n
+<b>Clear Hi-Score:</b> Sets your current Hi-Score to 0. If you currently have a Score greater than 0, then your Hi-Score will be updated to your current Score on the next roll.\n
+<b>Exit:</b> Closes the game. Essentially the same as pressing the \'Home\' button on your device. The game will continue to run in the background as long as your device doesn\'t terminate it.\n\n
+Click Play when you are ready! Good luck!"
+    </string>
     <string name="invite_to_play">Let\'s play!</string>
     <string name="score">Score: %1$d</string>
     <string name="hi_score">Hi-Score: %1$d</string>

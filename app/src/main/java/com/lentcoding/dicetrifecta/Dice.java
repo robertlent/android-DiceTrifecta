@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.preference.PreferenceManager;
-import android.view.View;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -12,25 +11,12 @@ import java.util.ArrayList;
 import java.util.Random;
 
 class Dice {
+    private static final Random rand = new Random();
+    private static final ArrayList<Integer> dice = new ArrayList<>();
 
-    static void rollDice(View v, Context c) {
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(c);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-
-        String msg;
-        Random rand = new Random();
-        int die1 = rand.nextInt(6) + 1;
-        int die2 = rand.nextInt(6) + 1;
-        int die3 = rand.nextInt(6) + 1;
-
-        ArrayList<Integer> dice = new ArrayList<>();
-        dice.clear();
-        dice.add(die1);
-        dice.add(die2);
-        dice.add(die3);
-
+    static void renderDice(Context c) {
         for (int i = 0; i < 3; i++) {
-            String imageName = "die_" + dice.get(i) + ".png";
+            String imageName = "die_" + dice.get(i) + MainActivity.diceType + ".png";
             try {
                 InputStream stream = c.getAssets().open(imageName);
                 Drawable d = Drawable.createFromStream(stream, null);
@@ -39,7 +25,26 @@ class Dice {
                 e.printStackTrace();
             }
         }
+    }
 
+    static void rollDice(Context c) {
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(c);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        String msg;
+        int die1 = rand.nextInt(6) + 1;
+        int die2 = rand.nextInt(6) + 1;
+        int die3 = rand.nextInt(6) + 1;
+        dice.clear();
+        dice.add(die1);
+        dice.add(die2);
+        dice.add(die3);
+
+        renderDice(c);
+
+        die1 = dice.get(0);
+        die2 = dice.get(1);
+        die3 = dice.get(2);
         if (die1 == die2 && die1 == die3) {
             int scoreDelta = die1 * 100;
             msg = "You rolled a triple " + die1 + "! You score " + scoreDelta + " points!";
