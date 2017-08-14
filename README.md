@@ -4,7 +4,7 @@ Dice Trifecta is a game where you roll dice, trying to get as high a score as po
 The user can switch between black and red dice. Their hi-score is saved and can be cleared from the menu.
 
 ### Screenshots
-![ScreenShot](/app/src/main/assets/ScreenshotsScreenshots/AppInterfaceInstructions.png)
+![ScreenShot](/app/src/main/assets/Screenshots/AppInterfaceInstructions.png)
 ![ScreenShot](/app/src/main/assets/Screenshots/AppInterfaceBlackDice.png)
 ![ScreenShot](/app/src/main/assets/Screenshots/AppInterfaceRedDice.png)
 ![ScreenShot](/app/src/main/assets/Screenshots/AppInterfaceMenu.png)
