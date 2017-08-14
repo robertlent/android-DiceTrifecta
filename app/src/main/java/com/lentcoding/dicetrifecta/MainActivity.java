@@ -1,6 +1,8 @@
 package com.lentcoding.dicetrifecta;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
@@ -10,21 +12,21 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-//import android.net.Uri;
 
+import java.util.ArrayList;
+import java.util.Objects;
+
+//import android.net.Uri;
 //import com.google.android.gms.appindexing.Action;
 //import com.google.android.gms.appindexing.AppIndex;
 //import com.google.android.gms.appindexing.Thing;
 //import com.google.android.gms.common.api.GoogleApiClient;
-
-import java.util.ArrayList;
-import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
     //Suppressing the memory leak messages until I figure out a better way of accessing these TextViews without them being static
@@ -120,7 +122,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
@@ -129,35 +130,55 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        if (id == R.id.action_change_dice) {
-            changeTypes();
-        }
+        switch (id) {
+            case R.id.action_change_dice:
+                changeTypes();
+                break;
 
-        if (id == R.id.action_newGame) {
-            finish();
-            startActivity(getIntent());
-        }
+            case R.id.action_newGame:
+                finish();
+                startActivity(getIntent());
+                break;
 
-        if (id == R.id.action_clear) {
-            SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-            SharedPreferences.Editor editor = sharedPreferences.edit();
+            case R.id.action_clear:
+                deleteHiScore();
+                break;
 
-            hiScore = 0;
-            editor.putInt("hiScore", 0);
-            editor.apply();
-
-            viewResult.setText(R.string.msg_reset_hi_score);
-            viewHiScore.setText(R.string.initial_hi_score);
-        }
-
-        if (id == R.id.action_exit) {
-            Intent intent = new Intent(getApplicationContext(), Directions.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            intent.putExtra("LOGOUT", true);
-            startActivity(intent);
+            case R.id.action_exit:
+                Intent intent = new Intent(getApplicationContext(), Directions.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent.putExtra("LOGOUT", true);
+                startActivity(intent);
+                break;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void deleteHiScore() {
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        final SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        DialogInterface.OnClickListener dialogClickListener =
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int button) {
+                        if (button == DialogInterface.BUTTON_POSITIVE) {
+                            hiScore = 0;
+                            editor.putInt("hiScore", 0);
+                            editor.apply();
+
+                            viewResult.setText(R.string.msg_reset_hi_score);
+                            viewHiScore.setText(R.string.initial_hi_score);
+                        }
+                    }
+                };
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(getString(R.string.are_you_sure))
+                .setPositiveButton(R.string.yes, dialogClickListener)
+                .setNegativeButton(R.string.no, dialogClickListener)
+                .show();
     }
 
     //Initializes the dice and action button types, based on the values stored in SharedPreferences
@@ -227,9 +248,9 @@ public class MainActivity extends AppCompatActivity {
 
 }
 
-/**
- * ATTENTION: This was auto-generated to implement the App Indexing API.
- * See https://g.co/AppIndexing/AndroidStudio for more information.
+/*
+  ATTENTION: This was auto-generated to implement the App Indexing API.
+  See https://g.co/AppIndexing/AndroidStudio for more information.
  */
 //    public Action getIndexApiAction() {
 //        Thing object = new Thing.Builder()

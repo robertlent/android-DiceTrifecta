@@ -19,7 +19,7 @@
             android:id="@+id/viewDirectionsTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/directionsTitle"
+            android:text="@string/directions_title"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
             android:textSize="20sp" />
@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/viewDirectionsTitle"
             android:paddingTop="10dp"
-            android:text="@string/directionsBody"
+            android:text="@string/directions_body"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textSize="20sp" />
 

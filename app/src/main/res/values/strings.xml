@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Dice Trifecta</string>
     <string name="action_change_dice">Change Dice Style</string>
-    <string name="directionsTitle">"<big>Welcome to Dice Trifecta!</big>\n</string>
-    <string name="directionsBody">"In this game, you roll three dice and are given a score based on your roll.\n
+    <string name="directions_title">"<big>Welcome to Dice Trifecta!</big>\n</string>
+    <string name="directions_body">"In this game, you roll three dice and are given a score based on your roll.\n
 <big><u>Scoring</u></big>\n
 <b>All three dice are the same value (a Trifecta!)</b>: Your score will increase by that value times 100.\n
 \t\t(i.e. You roll triple 3\'s, you get 300 points).\n
@@ -26,4 +26,7 @@ Click Play when you are ready! Good luck!"
     <string name="initial_hi_score">Hi-Score: 0</string>
     <string name="dice">Image of a Die</string>
     <string name="play">Play</string>
+    <string name="are_you_sure">Are you sure you want to reset your Hi-Score?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
 </resources>

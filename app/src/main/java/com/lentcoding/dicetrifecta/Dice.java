@@ -16,6 +16,11 @@ class Dice {
 
     static void renderDice(Context c) {
         for (int i = 0; i < 3; i++) {
+            if (dice.isEmpty()) {
+                dice.add(6);
+                dice.add(6);
+                dice.add(6);
+            }
             String imageName = "die_" + dice.get(i) + MainActivity.diceType + ".png";
             try {
                 InputStream stream = c.getAssets().open(imageName);
